@@ -21,42 +21,56 @@
   <body>
     <header class="w-11/12 container mx-auto py-8">
       <h2 class="text-[50px] font-bold">Job Application Tracker</h2>
-      <div class="flex gap-8">
+      <div class="w-11/12 container flex gap-5">
         <div class="card w-96 bg-base-100 card-md shadow-sm">
           <div class="card-body">
             <h2 class="card-title">Totall</h2>
-            <p class="">0</p>
+            <p id="totall-jobs">0</p>
           </div>
         </div>
         <div class="card w-96 bg-base-100 card-md shadow-sm">
           <div class="card-body">
             <h2 class="card-title">Interview</h2>
-            <p class="text-green-500">0</p>
+            <p id="totall-interview" class="text-green-500">0</p>
           </div>
         </div>
         <div class="card w-96 bg-base-100 card-md shadow-sm">
           <div class="card-body">
             <h2 class="card-title">Rejected</h2>
-            <p class="text-red-500">0</p>
+            <p id="totall-rejected" class="text-red-500">0</p>
           </div>
         </div>
       </div>
     </header>
+    
     <main>
       <!-- heading section -->
       <section class="w-11/12 container mx-auto">
         <div class="flex justify-between py-5">
           <h2 class="text-[30px] font-bold">Available Jobs</h2>
-          <p>0 jobs</p>
+          <p> <span id="jobs-count">0</span> jobs</p>
         </div>
         <div class="">
-          <button class="btn">All</button>
-          <button class="btn">Interview</button>
-          <button class="btn">Rejected</button>
+          <button onclick="toggleStyle('filter-btn-all')" id="filter-btn-all" 
+          class="btn">All</button>
+          <button onclick="toggleStyle('filter-btn-interview')" id="filter-btn-interview" 
+          class="btn">Interview</button>
+          <button onclick="toggleStyle('filter-btn-rejected')" id="filter-btn-rejected" 
+          class="btn">Rejected</button>
+        </div>
+      </section>
+      <!-- card-0-hidden -->
+       <section id="card-hidden" class="w-11/12 container mx-auto hidden">
+        <div
+          class="bg-base-100 shadow-md py-5 h-[400px] 
+          flex flex-col justify-center items-center">
+          <img src="./asset/jobs.png" alt="" />
+          <h2 class="text-[30px] font-bold">No jobs available</h2>
+          <p class="">Check back soon for new job opportunities</p>
         </div>
       </section>
       <!-- card section -->
-      <section class="w-11/12 container mx-auto space-y-4">
+      <section id="card-container" class="w-11/12 container mx-auto space-y-5 py-10">
         <!-- card-1 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
@@ -65,13 +79,13 @@
               <p class="">React Native Developer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">Remote • Full-time • $130,000 - $175,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Build cross-platform mobile applications using React Native. Work
               on products used by millions of users worldwide.
             </p>
@@ -89,13 +103,13 @@
               <p class="">Web Designer & Developer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Create stunning web experiences for high-profile clients. Must
               have portfolio and experience with modern web design trends.
             </p>
@@ -113,13 +127,13 @@
               <p class="">Data Visualization Specialist</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">Boston, MA • Full-time • $125,000 - $165,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Transform complex data into compelling visualizations. Required
               skills: D3.js, React, and strong analytical thinking.
             </p>
@@ -137,13 +151,13 @@
               <p class="">Backend Developer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">Seattle, WA • Full-time • $140,000 - $190,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Design and maintain scalable backend systems using Python and AWS.
               Work with modern DevOps practices and cloud infrastructure.
             </p>
@@ -161,13 +175,13 @@
               <p class="">UI/UX Engineer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">Austin, TX • Full-time • $110,000 - $150,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Create beautiful and functional user interfaces for our suite of
               products. Strong design skills and frontend development expertise
               required.
@@ -186,13 +200,13 @@
               <p class="">JavaScript Developer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">New York, NY • Full-time • $130,000 - $170,00</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Build enterprise applications with JavaScript and modern
               frameworks. We offer competitive compensation, health insurance,
               and professional development opportunities.
@@ -211,13 +225,13 @@
               <p class="">Full Stack Engineer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">Remote • Full-time • $120,000 - $160,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               Join our fast-growing startup and work on our core platform.
               Experience with Node.js and React required. Great benefits and
               equity package included.
@@ -236,13 +250,13 @@
               <p class="">Senior Frontend Developer</p>
             </div>
             <div class="">
-              <button><img src="./asset/delet.png" alt="" /></button>
+              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
             </div>
           </div>
           <p class="">San Francisco, CA • Full-time • $130,000 - $175,000</p>
           <div class="">
             <button class="btn">NOT APPLED</button>
-            <p class="">
+            <p class="pt-2">
               We are looking for an experienced Frontend Developer to build scalable 
               web applications using React and TypeScript. You will work with a talented 
               team on cutting-edge projects.We are looking for an experienced Frontend Developer 
@@ -257,5 +271,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
