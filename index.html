@@ -42,233 +42,329 @@
         </div>
       </div>
     </header>
-    
+
     <main>
       <!-- heading section -->
       <section class="w-11/12 container mx-auto">
         <div class="flex justify-between py-5">
           <h2 class="text-[30px] font-bold">Available Jobs</h2>
-          <p> <span id="jobs-count">0</span> jobs</p>
+          <p><span id="jobs-count">0</span> jobs</p>
         </div>
         <div class="">
-          <button onclick="toggleStyle('filter-btn-all')" id="filter-btn-all" 
-          class="btn">All</button>
-          <button onclick="toggleStyle('filter-btn-interview')" id="filter-btn-interview" 
-          class="btn">Interview</button>
-          <button onclick="toggleStyle('filter-btn-rejected')" id="filter-btn-rejected" 
-          class="btn">Rejected</button>
+          <button
+            onclick="toggleStyle('filter-btn-all')"
+            id="filter-btn-all"
+            class="btn btn-primary"
+          >
+            All
+          </button>
+          <button
+            onclick="toggleStyle('filter-btn-interview')"
+            id="filter-btn-interview"
+            class="btn"
+          >
+            Interview
+          </button>
+          <button
+            onclick="toggleStyle('filter-btn-rejected')"
+            id="filter-btn-rejected"
+            class="btn"
+          >
+            Rejected
+          </button>
         </div>
       </section>
       <!-- card-0-hidden -->
-       <section id="card-hidden" class="w-11/12 container mx-auto hidden">
+      <section id="card-hidden" class="w-11/12 container mx-auto hidden">
         <div
-          class="bg-base-100 shadow-md py-5 h-[400px] 
-          flex flex-col justify-center items-center">
+          class="bg-base-100 shadow-md py-5 h-[400px] flex flex-col justify-center items-center"
+        >
           <img src="./asset/jobs.png" alt="" />
           <h2 class="text-[30px] font-bold">No jobs available</h2>
           <p class="">Check back soon for new job opportunities</p>
         </div>
       </section>
+      <!-- filter card -->
+       <section id="filter-section" class="hidden">
+
+       </section>
       <!-- card section -->
-      <section id="card-container" class="w-11/12 container mx-auto space-y-5 py-10">
+      <section
+        id="card-container"
+        class="w-11/12 container mx-auto space-y-5 py-10">
         <!-- card-1 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">Mobile First Corp</h2>
-              <p class="">React Native Developer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">Remote • Full-time • $130,000 - $175,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
               Build cross-platform mobile applications using React Native. Work
               on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-2 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">WebFlow Agency</h2>
-              <p class="">Web Designer & Developer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              Create stunning web experiences for high-profile clients. Must
-              have portfolio and experience with modern web design trends.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-3 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">DataViz Solutions</h2>
-              <p class="">Data Visualization Specialist</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">Boston, MA • Full-time • $125,000 - $165,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              Transform complex data into compelling visualizations. Required
-              skills: D3.js, React, and strong analytical thinking.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-4 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">CloudFirst Inc</h2>
-              <p class="">Backend Developer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">Seattle, WA • Full-time • $140,000 - $190,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              Design and maintain scalable backend systems using Python and AWS.
-              Work with modern DevOps practices and cloud infrastructure.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-5 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">Innovation Labs</h2>
-              <p class="">UI/UX Engineer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">Austin, TX • Full-time • $110,000 - $150,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              Create beautiful and functional user interfaces for our suite of
-              products. Strong design skills and frontend development expertise
-              required.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-6 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">MegaCorp Solutions</h2>
-              <p class="">JavaScript Developer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">New York, NY • Full-time • $130,000 - $170,00</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              Build enterprise applications with JavaScript and modern
-              frameworks. We offer competitive compensation, health insurance,
-              and professional development opportunities.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-7 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">StartupXYZ</h2>
-              <p class="">Full Stack Engineer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">Remote • Full-time • $120,000 - $160,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              Join our fast-growing startup and work on our core platform.
-              Experience with Node.js and React required. Great benefits and
-              equity package included.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
         <!-- card-8 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="text-[20px] font-bold">TechCorp Industries</h2>
-              <p class="">Senior Frontend Developer</p>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
+              <p class="position">React Native Developer</p>
             </div>
             <div class="">
-              <button class="cursor-pointer"><img src="./asset/delet.png" alt="" /></button>
+              <button class="delet-btn cursor-pointer">
+                <img src="./asset/delet.png" alt="" />
+              </button>
             </div>
           </div>
-          <p class="">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+          <p class="location-type-salary">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
           <div class="">
-            <button class="btn">NOT APPLED</button>
-            <p class="pt-2">
-              We are looking for an experienced Frontend Developer to build scalable 
-              web applications using React and TypeScript. You will work with a talented 
-              team on cutting-edge projects.We are looking for an experienced Frontend Developer 
-              to build scalable web applications using React and TypeScript. You will work with 
-              a talented team on cutting-edge projects.
+            <button class="Status btn">NOT APPLIED</button>
+            <p class="description pt-2">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
             </p>
           </div>
           <div class="flex space-x-4">
-            <button class="btn btn-outline btn-success">INTERVIEW</button>
-            <button class="btn btn-outline btn-error">REJECTED</button>
+            <button class="interview-btn btn btn-outline btn-success">
+              INTERVIEW
+            </button>
+            <button class="rejected-btn btn btn-outline btn-error">
+              REJECTED
+            </button>
           </div>
         </div>
+       
       </section>
     </main>
     <script src="script.js"></script>
