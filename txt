@@ -1,8 +1,0 @@
-if (allJobs == 0) {
-  cardHidden.classList.remove("hidden");
-  cardContainer.classList.add("hidden");
-} else if (interviewList.length == 0) {
-  cardHidden.classList.remove("hidden");
-} else if (rejectedList.length == 0) {
-  cardHidden.classList.remove("hidden");
-}
