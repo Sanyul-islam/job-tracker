@@ -36,8 +36,6 @@ function toggleStyle(id) {
     cardContainer.classList.remove("hidden");
     filterSection.classList.add("hidden");
     cardHidden.classList.add("hidden");
-    renderInterview();
-    renderRejected();
     if (cardContainer.children.length == 0) {
       cardHidden.classList.remove("hidden");
       cardContainer.classList.add("hidden");
@@ -45,7 +43,7 @@ function toggleStyle(id) {
   } else if (id == "filter-btn-interview") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
-    cardHidden.classList.add("hidden")
+    cardHidden.classList.add("hidden");
     renderInterview();
     if (interviewList.length == 0) {
       cardHidden.classList.remove("hidden");
@@ -66,7 +64,7 @@ function toggleStyle(id) {
 document.addEventListener("click", function (event) {
   // console.log(event.target.classList.contains("interview-btn"));
   if (event.target.closest(".interview-btn")) {
-     const btn = event.target.closest(".interview-btn");
+    const btn = event.target.closest(".interview-btn");
     const parent = btn.closest(".bg-base-100");
 
     const companyName = parent.querySelector(".company-name").innerText;
@@ -83,7 +81,7 @@ document.addEventListener("click", function (event) {
       companyName,
       position,
       locationTypeSalary,
-      status: "Interview",
+      status,
       description,
     };
 
@@ -102,6 +100,14 @@ document.addEventListener("click", function (event) {
       renderRejected();
     }
     calculateCount();
+
+    if (currentStatus == "filter-btn-interview") {
+      renderInterview();
+    }
+
+    if (currentStatus == "filter-btn-rejected") {
+      renderRejected();
+    }
   } else if (event.target.closest(".rejected-btn")) {
     const btn = event.target.closest(".rejected-btn");
     const parent = btn.closest(".bg-base-100");
@@ -120,7 +126,7 @@ document.addEventListener("click", function (event) {
       companyName,
       position,
       locationTypeSalary,
-      status: "Rejected",
+      status,
       description,
     };
 
@@ -140,6 +146,14 @@ document.addEventListener("click", function (event) {
     }
 
     calculateCount();
+
+    if (currentStatus == "filter-btn-interview") {
+      renderInterview();
+    }
+
+    if (currentStatus == "filter-btn-rejected") {
+      renderRejected();
+    }
   }
 
   // delet button
@@ -168,13 +182,12 @@ document.addEventListener("click", function (event) {
       renderRejected();
     }
   }
-
 });
 
 function renderInterview() {
   filterSection.innerHTML = ``;
   for (let interview of interviewList) {
-    console.log(interview);
+    // console.log(interview);
     let div = document.createElement(`div`);
     div.className = "w-11/12 container mx-auto space-y-5 py-10";
     div.innerHTML = `<div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
@@ -217,7 +230,7 @@ function renderInterview() {
 function renderRejected() {
   filterSection.innerHTML = ``;
   for (let rejected of rejectedList) {
-    console.log(rejected);
+    // console.log(rejected);
     let div = document.createElement(`div`);
     div.className = "w-11/12 container mx-auto space-y-5 py-10";
     div.innerHTML = `<div class="bg-base-100 shadow-md py-6 px-5 space-y-5">
