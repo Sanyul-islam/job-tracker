@@ -1,5 +1,3 @@
-// All jobs count secion
-
 //Totall, interview & rejected count
 let interviewList = [];
 let rejectedList = [];
@@ -30,6 +28,7 @@ function toggleStyle(id) {
   filterbtnInterview.classList.remove("btn-primary");
   filterbtnRejected.classList.remove("btn-primary");
   currentStatus = id;
+  // console.log(currentStatus);
   const selected = document.getElementById(id);
   selected.classList.add("btn-primary");
 
@@ -37,23 +36,25 @@ function toggleStyle(id) {
     cardContainer.classList.remove("hidden");
     filterSection.classList.add("hidden");
     cardHidden.classList.add("hidden");
-    if (totallJobs == 0) {
+    renderInterview();
+    renderRejected();
+    if (cardContainer.children.length == 0) {
       cardHidden.classList.remove("hidden");
       cardContainer.classList.add("hidden");
     }
   } else if (id == "filter-btn-interview") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    cardHidden.classList.add("hidden")
     renderInterview();
-    // cardHidden.classList.remove("hidden")
     if (interviewList.length == 0) {
       cardHidden.classList.remove("hidden");
     }
   } else if (id == "filter-btn-rejected") {
     cardContainer.classList.add("hidden");
     filterSection.classList.remove("hidden");
+    cardHidden.classList.add("hidden");
     renderRejected();
-    //  cardHidden.classList.remove("hidden");
     if (rejectedList.length == 0) {
       cardHidden.classList.remove("hidden");
     }
@@ -62,10 +63,12 @@ function toggleStyle(id) {
 
 // event delegation
 
-cardContainer.addEventListener("click", function (event) {
-  console.log(event.target.classList.contains("interview-btn"));
-  if (event.target.classList.contains("interview-btn")) {
-    const parent = event.target.parentNode.parentNode;
+document.addEventListener("click", function (event) {
+  // console.log(event.target.classList.contains("interview-btn"));
+  if (event.target.closest(".interview-btn")) {
+     const btn = event.target.closest(".interview-btn");
+    const parent = btn.closest(".bg-base-100");
+
     const companyName = parent.querySelector(".company-name").innerText;
     const position = parent.querySelector(".position").innerText;
     const locationTypeSalary = parent.querySelector(
@@ -99,8 +102,10 @@ cardContainer.addEventListener("click", function (event) {
       renderRejected();
     }
     calculateCount();
-  } else if (event.target.classList.contains("rejected-btn")) {
-    const parent = event.target.parentNode.parentNode;
+  } else if (event.target.closest(".rejected-btn")) {
+    const btn = event.target.closest(".rejected-btn");
+    const parent = btn.closest(".bg-base-100");
+
     const companyName = parent.querySelector(".company-name").innerText;
     const position = parent.querySelector(".position").innerText;
     const locationTypeSalary = parent.querySelector(
@@ -126,7 +131,9 @@ cardContainer.addEventListener("click", function (event) {
     if (!companyExis) {
       rejectedList.push(cardInfo);
     }
-    interviewList = interviewList.filter((item) => item.companyName != cardInfo.companyName);
+    interviewList = interviewList.filter(
+      (item) => item.companyName != cardInfo.companyName,
+    );
 
     if (currentStatus == "filter-btn-interview") {
       renderInterview;
@@ -134,6 +141,34 @@ cardContainer.addEventListener("click", function (event) {
 
     calculateCount();
   }
+
+  // delet button
+  else if (event.target.closest(".delet-btn")) {
+    const btn = event.target.closest(".delet-btn");
+    const parent = btn.closest(".bg-base-100");
+
+    const companyName = parent.querySelector(".company-name").innerText;
+    interviewList = interviewList.filter(
+      (item) => item.companyName != companyName,
+    );
+
+    rejectedList = rejectedList.filter(
+      (item) => item.companyName != companyName,
+    );
+
+    parent.remove();
+
+    calculateCount();
+
+    if (currentStatus == "filter-btn-interview") {
+      renderInterview();
+    }
+
+    if (currentStatus == "filter-btn-rejected") {
+      renderRejected();
+    }
+  }
+
 });
 
 function renderInterview() {
