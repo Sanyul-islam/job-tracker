@@ -21,23 +21,23 @@
   <body>
     <header class="w-11/12 container mx-auto py-8 items-center justify-center">
       <h2 class="text-[50px] font-bold">Job Application Tracker</h2>
-      <div class="w-11/12 container flex flex-col gap-5 mx-auto md:flex-row ">
+      <div class="w-11/12 container flex flex-col gap-5 mx-auto md:flex-row">
         <div class="card w-96 bg-base-100 card-md shadow-sm">
           <div class="card-body items-center text-center">
             <h2 class="card-title">Totall</h2>
-            <p id="totall-jobs" class="font-bold">0</p>
+            <p id="totall-jobs" class="font-bold text-[40px]">0</p>
           </div>
         </div>
         <div class="card w-96 bg-base-100 card-md shadow-sm">
           <div class="card-body items-center text-center">
             <h2 class="card-title">Interview</h2>
-            <p id="totall-interview" class="font-bold text-green-500">0</p>
+            <p id="totall-interview" class="font-bold text-green-500 text-[40px]">0</p>
           </div>
         </div>
         <div class="card w-96 bg-base-100 card-md shadow-sm">
           <div class="card-body items-center text-center">
             <h2 class="card-title items-center text-center">Rejected</h2>
-            <p id="totall-rejected" class="font-bold text-red-500">0</p>
+            <p id="totall-rejected" class="font-bold text-red-500 text-[40px]">0</p>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
       <section class="w-11/12 container mx-auto">
         <div class="flex justify-between py-5">
           <h2 class="text-[30px] font-bold">Available Jobs</h2>
-          <p><span id="jobs-count" class="font-bold">0</span> jobs</p>
+          <p><span id="jobs-count" class="font-bold text-[20px]">0</span> jobs</p>
         </div>
         <div class="">
           <button
@@ -85,15 +85,26 @@
         </div>
       </section>
       <!-- filter card -->
-      <section id="interview-section" class="w-11/12 container mx-auto py-8 hidden"></section>
-      <section id="reject-section" class="w-11/12 container mx-auto py-8 hidden"></section>
+      <section
+        id="interview-section"
+        class="w-11/12 container mx-auto space-y-5 py-8 hidden"
+      ></section>
+      <section
+        id="reject-section"
+        class="w-11/12 container mx-auto space-y-5 py-8 hidden"
+      ></section>
       <!-- card section -->
-      <section id="card-container" class="w-11/12 container mx-auto space-y-5 py-10 hidden">
+      <section
+        id="card-container"
+        class="w-11/12 container mx-auto space-y-5 py-10 hidden"
+      >
         <!-- card-1 -->
         <div class="bg-base-100 shadow-md py-6 px-5 space-y-5 alljob">
           <div class="flex justify-between">
             <div class="">
-              <h2 class="company-name text-[20px] font-bold">Mobile First Corp</h2>
+              <h2 class="company-name text-[20px] font-bold">
+                Mobile First Corp
+              </h2>
               <p class="position">React Native Developer</p>
             </div>
             <div class="">
@@ -138,7 +149,7 @@
             Los Angeles, CA • Part-time • $80,000 - $120,000
           </p>
           <div class="">
-            <button  class="Status btn">NOT APPLIED</button>
+            <button class="Status btn">NOT APPLIED</button>
             <p class="description pt-2">
               Create stunning web experiences for high-profile clients. Must
               have portfolio and experience with modern web design trends.
@@ -198,7 +209,7 @@
               <p class="position">Data Visualization Specialist</p>
             </div>
             <div class="">
-              <button  class="cursor-pointer">
+              <button class="cursor-pointer">
                 <img class="delet-btn" src="./asset/delet.png" alt="" />
               </button>
             </div>
@@ -230,7 +241,7 @@
               <p class="position">Backend Developer</p>
             </div>
             <div class="">
-              <button class=" cursor-pointer">
+              <button class="cursor-pointer">
                 <img class="delet-btn" src="./asset/delet.png" alt="" />
               </button>
             </div>
@@ -343,7 +354,9 @@
           <div class="">
             <button class="Status btn">NOT APPLIED</button>
             <p class="description pt-2">
-            We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+              We are looking for an experienced Frontend Developer to build
+              scalable web applications using React and TypeScript. You will
+              work with a talented team on cutting-edge projects.
             </p>
           </div>
           <div class="flex space-x-4">
@@ -360,4 +373,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
